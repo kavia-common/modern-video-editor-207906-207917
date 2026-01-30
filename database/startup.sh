@@ -4,7 +4,10 @@
 DB_NAME="myapp"
 DB_USER="appuser"
 DB_PASSWORD="dbuser123"
-DB_PORT="5000"
+
+# Use the container-assigned PORT if provided; default to 5001 (manifest port).
+# This keeps PostgreSQL and the platform readiness check aligned.
+DB_PORT="${PORT:-5001}"
 
 echo "Starting PostgreSQL setup..."
 
